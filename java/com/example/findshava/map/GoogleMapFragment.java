@@ -302,8 +302,10 @@ public class GoogleMapFragment extends SupportMapFragment implements OnMapReadyC
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        mMap.setMyLocationEnabled(true);
-        inclusionLocation();
+        if (requestCode == 1 && grantResults[0] == 0 && grantResults[1] == 0) {
+            mMap.setMyLocationEnabled(true);
+            inclusionLocation();
+        }
     }
 
     private void inclusionLocation() {
