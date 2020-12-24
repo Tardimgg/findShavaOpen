@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <ProgressBar
+        android:id="@+id/waitRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp" />
+
+    <LinearLayout
+        android:id="@+id/place_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:background="@drawable/small_frame_view"
+        app:layout_anchor="@id/waitRecyclerView"
+        android:paddingBottom="5dp">
+
+        <com.example.findshava.customView.FloatingTextActionButton
+            android:id="@+id/create_route"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.example.findshava.customView.FloatingTextActionButton
+            android:id="@+id/savePlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/root_view_properties_place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_anchor="@id/place_button"
+        android:background="@drawable/small_frame_view">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_margin="25dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/properties_icon"/>
+
+        <TextView
+            android:id="@+id/properties_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:lineSpacingExtra="5dp"
+            android:layout_margin="25dp"/>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_anchor="@id/root_view_properties_place" />
+
+
+</LinearLayout>
